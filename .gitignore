@@ -1,0 +1,6 @@
+*~
+*.pyc
+__pycache__
+.vs
+HandCount/HandCount/obj
+HandCount/HandCount/bin
