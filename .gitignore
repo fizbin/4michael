@@ -2,5 +2,6 @@
 *.pyc
 __pycache__
 .vs
-HandCount/HandCount/obj
-HandCount/HandCount/bin
+HandCount/*/obj
+HandCount/*/bin
+.DS_Store

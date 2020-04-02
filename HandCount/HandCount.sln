@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandCount", "HandCount\HandCount.csproj", "{28912A3D-62F5-402F-B769-29DD6F66A8CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeekRF8", "SeekRF8\SeekRF8.csproj", "{CE06849C-E15D-47B7-8445-741F3E014133}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
@@ -13,5 +15,9 @@ Global
 		{28912A3D-62F5-402F-B769-29DD6F66A8CA}.Debug|anycpu.Build.0 = Debug|anycpu
 		{28912A3D-62F5-402F-B769-29DD6F66A8CA}.Release|anycpu.ActiveCfg = Release|anycpu
 		{28912A3D-62F5-402F-B769-29DD6F66A8CA}.Release|anycpu.Build.0 = Release|anycpu
+		{CE06849C-E15D-47B7-8445-741F3E014133}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{CE06849C-E15D-47B7-8445-741F3E014133}.Debug|anycpu.Build.0 = Debug|anycpu
+		{CE06849C-E15D-47B7-8445-741F3E014133}.Release|anycpu.ActiveCfg = Release|anycpu
+		{CE06849C-E15D-47B7-8445-741F3E014133}.Release|anycpu.Build.0 = Release|anycpu
 	EndGlobalSection
 EndGlobal
