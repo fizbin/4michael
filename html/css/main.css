@@ -24,15 +24,11 @@ body {
 	height: 100%
 }
 
-.lol {
-  background-image: url("img/tableBG.jpg");
-  background-repeat: repeat;
-}
-
 .bottomBar {
-	position:fixed;
-	width: 100%;
-	bottom: 0px;
+    height: 192px;
+    position:fixed;
+    width: 100%;
+    bottom: 0px;
 }
 .scoreHideRight {
 	position:fixed;
@@ -81,33 +77,69 @@ body {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+.cardtop {
+	position: absolute;
+	width: 118px;
+	height: 182px;
+	top:0%;
+	left:0%;
+	padding: 5px;
+	font-size:2em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align:left;
+}
+.cardbottom {
+	position: absolute;
+	width: 118px;
+	height: 182px;
+	transform: rotate(180deg);
+	top:0%;
+	left:0%;
+	text-align:left;
+	padding: 5px;
+	font-size:2em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 .cards {
-	position: fixed;
-	bottom: 280px;
-	
-	text-align: center;
-	width: 100%;
-	height: 192px;
+    width: 100%;
+    text-align: center;
+    position:fixed;
+    bottom: 192px;
+    white-space: nowrap;
+}
+.cardholder {
+    display: inline-block;
+    text-align: center;
+    background: url(../img/card_frame.png);
+    background-size: cover;
+    min-width: 132px;
+    min-height: 192px;
+    margin: 1vh;
 }
 .card {
-	display: inline-text;
-	position: absolute;
-	top: 0px;
-	width: 128px;
-	text-align: center;
-	
-	
-	
-	
-	
+    display: block;
+    text-align: center;
+    background: url(../img/card_front.png);
+    background-size: cover;
+    min-width: 120px;
+    min-height: 180px;
+    margin: 1vh;
 }
-.cardSuitBlack {
-	position: absolute;
-	width: 128px;
-	height: 192px;
-	font-size: 4em;
-	top: calc(180px - 2em);
-	margin: 0px;
+.black {
+    color: black;
+}
+.red {
+    color: red;
+}
+.cardsuit {
+    position: absolute;
+    width: 128px;
+    height: 192px;
+    font-size: 4em;
+    top: calc(180px - 2em);
+    margin: 0px;
 }
 /*
  * Remove text-shadow in selection highlight:
