@@ -17,91 +17,20 @@ html {
   line-height: 1.4;
   background-image: url("../img/tableBG.jpg");
   background-repeat: repeat;
-  height: 100%
+  height: 100%;
 }
 
 body {
-	height: 100%
+    height: 100%;
+    background-image: url("../img/score_hide_right.png"),
+    url("../img/score_hide_left.png"),
+    url("../img/bottomBar.png"),
+    url("../img/gradient_shading.png");
+    background-size: auto 192px, auto 192px, auto 192px, 100% calc(100vh - 180px);
+    background-repeat: no-repeat, no-repeat, repeat-x, no-repeat;
+    background-position: bottom right, bottom left, bottom, top;
 }
 
-.bottomBar {
-    height: 192px;
-    position:fixed;
-    width: 100%;
-    bottom: 0px;
-}
-.scoreHideRight {
-	position:fixed;
-	right: 0px;
-	bottom: 0px;
-}
-
-.scoreHideLeft {
-	position:fixed;
-	left: 0px;
-	bottom: 0px;
-}
-.gradientFrame {
-	position:fixed;
-	height: calc(100vh - 180px);
-	width: 100%;
-	top: 0px;
-	z-index:255;
-}
-
-.cardTextTopBlack {
-	position: absolute;
-	width: 118px;
-	height: 182px;
-	top:0%;
-	left:0%;
-	padding: 5px;
-	font-size:2em;
-	color:black;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	text-align:left;
-	
-}
-.cardTextBottomBlack {
-	position: absolute;
-	width: 118px;
-	height: 182px;
-	transform: rotate(180deg);
-	top:0%;
-	left:0%;
-	text-align:left;
-	padding: 5px;
-	font-size:2em;
-	color:black;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-.cardtop {
-	position: absolute;
-	width: 118px;
-	height: 182px;
-	top:0%;
-	left:0%;
-	padding: 5px;
-	font-size:2em;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	text-align:left;
-}
-.cardbottom {
-	position: absolute;
-	width: 118px;
-	height: 182px;
-	transform: rotate(180deg);
-	top:0%;
-	left:0%;
-	text-align:left;
-	padding: 5px;
-	font-size:2em;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
 .cards {
     width: 100%;
     text-align: center;
@@ -111,35 +40,80 @@ body {
 }
 .cardholder {
     display: inline-block;
+    position: relative;
+
     text-align: center;
     background: url(../img/card_frame.png);
     background-size: cover;
     min-width: 132px;
-    min-height: 192px;
+    min-height: 202px;
     margin: 1vh;
+    padding: 10px;
 }
 .card {
     display: block;
+    position: absolute;
     text-align: center;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    vertical-align: middle;
+}
+.cardfront {
     background: url(../img/card_front.png);
     background-size: cover;
-    min-width: 120px;
-    min-height: 180px;
-    margin: 1vh;
 }
+.cardback {
+    background: url(../img/card_back.png);
+    background-size: cover;
+}
+
 .black {
     color: black;
 }
 .red {
     color: red;
 }
-.cardsuit {
-    position: absolute;
-    width: 128px;
-    height: 192px;
+.cardback .cardtop {
+    display: none;
+}
+.cardback .cardbottom {
+    display: none;
+}
+.cardback .cardsuit {
+    display: none;
+}
+.cardfront .cardtop {
+	position: absolute;
+	top:0;
+	left:0;
+	padding: 5px;
+	font-size:2em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align:left;
+}
+.cardfront .cardbottom {
+	position: absolute;
+	transform: rotate(180deg);
+	bottom:0;
+        right:0;
+	text-align:left;
+	padding: 5px;
+	font-size:2em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.cardfront .cardsuit {
+    display: block;
+    text-align: center;
     font-size: 4em;
-    top: calc(180px - 2em);
-    margin: 0px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 /*
  * Remove text-shadow in selection highlight:
