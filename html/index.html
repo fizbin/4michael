@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="">
 
 <head>
   <meta charset="utf-8">
@@ -7,6 +7,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <script type="text/javascript" src="js/main.js"></script>
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
@@ -18,84 +19,57 @@
 </head>
 
 <body>
- <!--
- <img class=bottomBar src="img/bottomBar.png" alt="Bottom bar">
- <img class=scoreHideRight src="img/score_hide_right.png" alt="Scroll hide element" height=192>
- <img class=scoreHideLeft src="img/score_hide_left.png" alt="Scroll hide element" height=192>
- <img class=gradientFrame src="img/gradient_shading.png" alt="Gradient" height=256>
--->
-  <div class="cardChooser">
-    <img src="img/cardChooser.png" alt="Card chooser menu" width=256>
-  </div>
+  <div class="gradientFrame"></div>
+  <div class="cardChooser cardDest"></div>
   <div class="jar">
     <img src="img/jar.png" alt="Jar" width=340>
   </div>
+  <div class="baseCardRegion"><div class="baseCardHolder cardDest"></div></div>
+  <div class="cards">
+    <div class="cardholder cardDest">
+      <span id="card1" class="card cardfront black" draggable="true">
+        <span class="cardtop">A</span>
+        <span class="cardbottom">A</span>
+        <span class="cardsuit">&spades;</span>
+      </span>
+    </div>
+    <div class="cardholder cardDest">
+      <span id="card2" class="card cardfront black" draggable="true">
+        <span class="cardtop">J</span>
+        <span class="cardbottom">J</span>
+        <span class="cardsuit">&spades;</span>
+      </span>
+    </div>
+    <div class="cardholder cardDest">
+      <span id="card3" class="card cardfront black" draggable="true">
+        <span class="cardtop">3</span>
+        <span class="cardbottom">3</span>
+        <span class="cardsuit">&spades;</span>
+      </span>
+    </div>
+    <div class="cardholder cardDest">
+      <span id="card4" class="card cardfront red" draggable="true">
+        <span class="cardtop">K</span>
+        <span class="cardbottom">K</span>
+        <span class="cardsuit">&diams;</span>
+      </span>
+    </div>
+    <div class="cardholder cardDest">
+      <span id="card5" class="card cardback black" draggable="true">
+        <span class="cardtop">A</span>
+        <span class="cardbottom">A</span>
+        <span class="cardsuit">&spades;</span>
+      </span>
+    </div>
+    <div class="cardholder cardDest">
+      <span id="card6" class="card cardfront red" draggable="true">
+        <span class="cardtop">5</span>
+       <span class="cardbottom">5</span>
+       <span class="cardsuit">&hearts;</span>
+      </span>
+    </div>
+  </div>
 
-<img class=gradientFrame src="img/gradient_shading.png" alt="Gradient">
-<img class=baseCardRegion src="img/base_card_region.png" alt="Gradient">
-
- <div class="cards">
-   <div class="cardholder">
-     <span class="card cardfront black">
-       <span class="cardtop">A</span>
-       <span class="cardbottom">A</span>
-       <span class="cardsuit">&spades;</span>
-     </span>
-   </div>
-   <div class="cardholder">
-     <span class="card cardfront black">
-       <span class="cardtop">J</span>
-       <span class="cardbottom">J</span>
-       <span class="cardsuit">&spades;</span>
-     </span>
-   </div>
-   <div class="cardholder">
-     <span class="card cardfront black">
-       <span class="cardtop">A</span>
-       <span class="cardbottom">A</span>
-       <span class="cardsuit">&spades;</span>
-     </span>
-   </div>
-   <div class="cardholder">
-     <span class="card cardfront black">
-       <span class="cardtop">A</span>
-       <span class="cardbottom">A</span>
-       <span class="cardsuit">&spades;</span>
-     </span>
-   </div>
-   <div class="cardholder">
-     <span class="card cardback black">
-       <span class="cardtop">A</span>
-       <span class="cardbottom">A</span>
-       <span class="cardsuit">&spades;</span>
-     </span>
-   </div>
-   <div class="cardholder">
-     <span class="card cardfront black">
-       <span class="cardtop">A</span>
-       <span class="cardbottom">A</span>
-       <span class="cardsuit">&spades;</span>
-     </span>
-   </div>
- </div>
- <!--
- <div class=cards height=192 width=768>
- <span class=card height=192 width=128>
- <img src="img/card_front.png" alt=card height=192>
- <p  class=cardTextTopBlack><strong>A</strong><p>
- <p  class=cardTextBottomBlack><strong>A</strong><p>
- <p  class=cardSuitBlack>♠<p>
- </span>
- <span class=card height=192 width=128>
- <img src="img/card_front.png" alt=card height=192>
- <p  class=cardTextTopBlack><strong>A</strong><p>
- <p  class=cardTextBottomBlack><strong>A</strong><p>
- <p  class=cardSuitBlack>♠<p>
- </span>
-
- </div>
--->
-  
 </body>
 
 </html>

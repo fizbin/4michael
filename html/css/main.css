@@ -25,27 +25,55 @@ body {
     background-image: url("../img/score_hide_right.png"),
     url("../img/score_hide_left.png"),
     url("../img/bottomBar.png");
-    
+
     background-size: auto 192px, auto 192px, auto 192px, 100% calc(100vh - 180px);
     background-repeat: no-repeat, no-repeat, repeat-x, no-repeat;
     background-position: bottom right, bottom left, bottom, top;
     z-index:255;
 }
 .gradientFrame {
+    background-image: url("../img/gradient_shading.png");
+    background-size: cover;
     position:fixed;
     height: calc(100vh - 180px);
     width: 100%;
     top: 0px;
     z-index:255;
     opacity:0.7;
+    pointer-events: none;
+}
+
+.gradientFrame * {
+    pointer-events: auto;
 }
 
 .baseCardRegion {
     width: 100%;
     height: 45%;
     position: fixed;
+    text-align: center;
     top: 0px;
     filter: drop-shadow(10px 10px 4px black);
+    pointer-events: none;
+    background: url(../img/base_card_region.png);
+    background-size: cover;
+}
+
+.baseCardRegion * {
+    pointer-events: auto;
+}
+.baseCardHolder {
+    display: inline-block;
+    position: relative;
+    filter: drop-shadow(10px 10px 4px black);
+    text-align: center;
+    background: url(../img/card_frame.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 202px;
+    min-height: 302px;
+    margin: 1vh;
+    padding: 10px;
 }
 
 
@@ -55,11 +83,20 @@ body {
     position:fixed;
     bottom: 212px;
     white-space: nowrap;
+    pointer-events: none;
+
+}
+.cards * {
+    pointer-events: auto;
 }
 .cardChooser {
+    background: url(../img/cardChooser.png);
+    background-size: cover;
     position: absolute;
     right: 35px;
     bottom: 225px;
+    width: 256px;
+    height: 300px;
     filter: drop-shadow(10px 10px 4px black);
 }
 .jar {
@@ -71,7 +108,7 @@ body {
 .cardholder {
     display: inline-block;
     position: relative;
-filter: drop-shadow(10px 10px 4px black);
+    filter: drop-shadow(10px 10px 4px black);
     text-align: center;
     background: url(../img/card_frame.png);
     background-size: cover;
@@ -93,11 +130,11 @@ filter: drop-shadow(10px 10px 4px black);
 }
 .cardfront {
     background: url(../img/card_front.png);
-    background-size: cover;
+    background-size: 100% 100%;
 }
 .cardback {
     background: url(../img/card_back.png);
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .black {
