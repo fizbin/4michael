@@ -6,6 +6,17 @@ function allowCardMove(ev) {
   }
 }
 
+function dragEnter(ev) {
+  if (ev.currentTarget.getElementsByClassName("card").length == 0) {
+    ev.currentTarget.classList.add("dragTarget");
+  }
+}
+
+function dragLeave(ev) {
+  ev.currentTarget.classList.remove("dragTarget");
+}
+
+
 function dragCard(ev) {
   // The start of a card drag.
   // We need to record the id of the thing being dragged in the drag event's
@@ -24,8 +35,9 @@ function dropCard(ev) {
     // move the card
     ev.currentTarget.appendChild(card);
     // reset card font size
-    card.style.fontSize = (card.clientHeight / 13) + 'px';
+    card.style.fontSize = Math.max(6, card.clientHeight / 13) + 'px';
   }
+  ev.currentTarget.classList.remove("dragTarget");
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -41,6 +53,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let element = cardDests[i];
     element.addEventListener("dragover", allowCardMove);
     element.addEventListener("drop", dropCard);
+    element.addEventListener("dragenter", dragEnter);
+    element.addEventListener("dragleave", dragLeave);
   }
 });
 
@@ -54,6 +68,6 @@ window.addEventListener('load', () => {
   const cards = document.getElementsByClassName("card");
   for(var i=0; i < cards.length; i++) {
     let card = cards[i];
-    card.style.fontSize = (card.clientHeight / 13) + 'px';
+    card.style.fontSize = Math.max(6, card.clientHeight / 13) + 'px';
   }
 });

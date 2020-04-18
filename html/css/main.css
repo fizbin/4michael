@@ -70,8 +70,8 @@ body {
     background: url(../img/card_frame.png);
     background-size: contain;
     background-repeat: no-repeat;
-    min-width: 202px;
-    min-height: 302px;
+    width: 202px;
+    height: 302px;
     margin: 1vh;
     padding: 10px;
 }
@@ -84,7 +84,7 @@ body {
     bottom: 212px;
     white-space: nowrap;
     pointer-events: none;
-
+    height: 250px;
 }
 .cards * {
     pointer-events: auto;
@@ -103,8 +103,29 @@ body {
     position: absolute;
     left: 0px;
     bottom: 200px;
+    box-sizing: border-box;
+    width: 340px;
+    height: 455px;
     filter: drop-shadow(10px 10px 4px black);
+    background: url(../img/jar.png);
+    background-size: 100% 100%;
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
+
+.jarholder {
+    display: block;
+    box-sizing: border-box;
+    height: 45%;
+    margin-top: 5%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 35%;
+    padding-right: 35%;
+    position: relative;
+}
+
 .cardholder {
     display: inline-block;
     position: relative;
@@ -112,22 +133,24 @@ body {
     text-align: center;
     background: url(../img/card_frame.png);
     background-size: cover;
-    min-width: 132px;
-    min-height: 202px;
+    width: 132px;
+    height: 202px;
     margin: 1vh;
-    padding: 10px;
+    padding: 7px;
 }
 .card {
     display: block;
-    position: absolute;
-    text-align: center;
-    top: 7px;
-    left: 7px;
-    bottom: 7px;
-    right: 7px;
+    position: relative;
     vertical-align: middle;
+    width: 100%;
+    height: 100%;
     filter: drop-shadow(0px 0px 4px black);
 }
+
+.dragTarget {
+    background: yellow;
+}
+
 .cardfront {
     background: url(../img/card_front.png);
     background-size: 100% 100%;
@@ -183,6 +206,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
