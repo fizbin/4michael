@@ -47,6 +47,10 @@ window.addEventListener('DOMContentLoaded', () => {
   for(var i=0; i < cards.length; i++) {
     let element = cards[i];
     element.addEventListener("dragstart", dragCard);
+    element.addEventListener("dblclick", (ev) => {
+      ev.currentTarget.classList.toggle("cardfront");
+      ev.currentTarget.classList.toggle("cardback");
+    });
   }
   const cardDests = document.getElementsByClassName("cardDest");
   for(var i=0; i < cardDests.length; i++) {

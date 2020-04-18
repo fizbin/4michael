@@ -33,7 +33,7 @@ body {
 }
 .gradientFrame {
     background-image: url("../img/gradient_shading.png");
-    background-size: cover;
+    background-size: 100% 100%;
     position:fixed;
     height: calc(100vh - 180px);
     width: 100%;
