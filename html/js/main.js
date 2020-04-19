@@ -1,13 +1,16 @@
 function allowCardMove(ev) {
-  // if we don't have a card, allow a drop event to happen
-  if (ev.currentTarget.getElementsByClassName("card").length == 0) {
+  // Don't count if the card being moved is the card we have
+  let mycard = ev.currentTarget.getElementsByClassName("card")[0];
+  if (!mycard.classList.contains("dragStart")) {
     ev.preventDefault();
     ev.dataTransfer.dropEffect = "move";
   }
 }
 
 function dragEnter(ev) {
-  if (ev.currentTarget.getElementsByClassName("card").length == 0) {
+  // Don't count if the card being moved is the card we have
+  let mycard = ev.currentTarget.getElementsByClassName("card")[0];
+  if (!mycard.classList.contains("dragStart")) {
     ev.currentTarget.classList.add("dragTarget");
   }
 }
@@ -23,21 +26,31 @@ function dragCard(ev) {
   // dataTransfer - otherwise when we get to the drop event we won't know
   // which card to move.
   ev.dataTransfer.setData("text", ev.target.id);
+  ev.target.classList.add("dragStart");
   ev.effectAllowed = "copyMove";
+  document.body.classList.add("dragActive");
+}
+
+function dragStop(ev) {
+  ev.target.classList.remove("dragStart");
+  document.body.classList.remove("dragActive");
 }
 
 function dropCard(ev) {
-  console.log("Dropped");
-  if (ev.currentTarget.getElementsByClassName("card").length == 0) {
-    ev.preventDefault();
-    let data = ev.dataTransfer.getData("text");
-    let card = document.getElementById(data);
-    // move the card
-    ev.currentTarget.appendChild(card);
-    // reset card font size
-    card.style.fontSize = Math.max(6, card.clientHeight / 13) + 'px';
-  }
+  document.body.classList.remove("dragActive");
   ev.currentTarget.classList.remove("dragTarget");
+  let oldcard = ev.currentTarget.getElementsByClassName("card")[0];
+  ev.preventDefault();
+  let data = ev.dataTransfer.getData("text");
+  let newcard = document.getElementById(data);
+  // swap the cards
+  newcard.parentElement.appendChild(oldcard);
+  ev.currentTarget.appendChild(newcard);
+  // reset card font size
+  newcard.classList.remove("dragStart");
+  oldcard.classList.remove("dragStart");
+  newcard.style.fontSize = Math.max(6, newcard.clientHeight / 13) + 'px';
+  oldcard.style.fontSize = Math.max(6, oldcard.clientHeight / 13) + 'px';
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -47,6 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
   for(var i=0; i < cards.length; i++) {
     let element = cards[i];
     element.addEventListener("dragstart", dragCard);
+    element.addEventListener("dragend", dragStop);
     element.addEventListener("dblclick", (ev) => {
       ev.currentTarget.classList.toggle("cardfront");
       ev.currentTarget.classList.toggle("cardback");

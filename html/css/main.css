@@ -147,10 +147,30 @@ body {
     filter: drop-shadow(0px 0px 4px black);
 }
 
-.dragTarget {
-    background: yellow;
+/* See how there's no space here? That means "an element that's both a */
+/* card and a cardblank". */
+.card.cardblank {
+    visibility: hidden;
 }
 
+/* With a space we mean "something with a border class that's inside an */
+/* element that's both a card and cardblank". Note that because of the */
+/* previous rule, we won't usually see this border. */
+.card.cardblank .border {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 10px white solid;
+}
+
+/* We want cards in the jar to look like they're really "in" the jar, so */
+/* adjust the opacity */
+.jarholder .card {
+    opacity: 0.5;
+}
+
+/* Now the basic card styling rules */
 .cardfront {
     background: url(../img/card_front.png);
     background-size: 100% 100%;
@@ -207,6 +227,38 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
+/* DRAGGING RULES */
+
+/* In general, while a drag is active we don't want anything that's */
+/* on the inside of a cardDest to respond to pointer events - we want */
+/* all pointer events to go to the .cardDest */
+.dragActive .cardDest * {
+    pointer-events: none;
+}
+/* except that the card we're actually dragging does need to respond to */
+/* pointer events or else we can't drag it. */
+.dragActive .cardDest .dragStart {
+    pointer-events: auto;
+}
+
+/* For cards, we can't really display a border, so we do this to indicate */
+/* that they're an active drag target */
+.dragTarget .card {
+    opacity: 0.5;
+}
+
+/* but in the jarholder they're already opacity: 0.5, so even lower */
+.jarholder.dragTarget .card {
+    opacity: 0.2;
+}
+
+/* We show the white outline by making the cardblank, and what's inside it, */
+/* visible while it's in a dragTarget. */
+.dragTarget .card.cardblank {
+    visibility: visible;
+    opacity: 1.0;
+}
 
 /*
  * Remove text-shadow in selection highlight:
